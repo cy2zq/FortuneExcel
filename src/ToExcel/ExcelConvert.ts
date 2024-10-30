@@ -48,7 +48,7 @@ var fontConvert = function (
       return num === 0 ? false : true;
     },
   };
-  let color = fc ? "" : (fc + "").indexOf("rgb") > -1 ? rgb2hex(fc) : fc;
+  let color = (fc + "").indexOf("rgb") > -1 ? rgb2hex(fc) : fc;
 
   let font = {
     name: ff,

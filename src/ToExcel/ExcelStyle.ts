@@ -13,7 +13,7 @@ var setStyleAndValue = function (
   cellArr.forEach(function (row, rowid) {
     const dbrow = worksheet.getRow(rowid + 1);
     //设置单元格行高,默认乘以1.2倍
-    dbrow.height = luckysheet.getRowHeight([rowid])[rowid] * 1.2;
+    dbrow.height = luckysheet.getRowHeight([rowid])[rowid] / 1.2;
     row.every(function (cell, columnid) {
       if (!cell) return true;
       if (rowid == 0) {
