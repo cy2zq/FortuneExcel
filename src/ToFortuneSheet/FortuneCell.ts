@@ -3,7 +3,7 @@ import { ReadXml, Element, IStyleCollections,getColor,getlineStringAttr } from "
 import {getXmlAttibute, getColumnWidthPixel, getRowHeightPixel,getcellrange, escapeCharacter, isChinese, isJapanese, isKoera,isContainMultiType} from "../common/method.js";
 import { ST_CellType, indexedColors, OEM_CHARSET,borderTypes,fontFamilys } from "../common/constant.js"
 import { IattributeList, stringToNum } from "../ICommon.js";
-import { FortuneSheetborderInfoCellValueStyle,FortuneSheetborderInfoCellForImp,FortuneSheetborderInfoCellValue,FortuneSheetCelldataBase,FortuneSheetCelldataValue,FortuneSheetCellFormat,FortuneInlineString } from "./FortuneBase.js";
+import { FortuneSheetborderInfoCellValueStyle,FortuneSheetborderInfoCellForImp,FortuneSheetborderInfoCellValue,FortuneSheetCelldataBase,FortuneSheetCelldataValue,FortuneSheetCellFormat } from "./FortuneBase.js";
 
 export class FortuneSheetCelldata extends FortuneSheetCelldataBase{
     _borderObject:IfortuneSheetborderInfoCellForImp
@@ -555,7 +555,7 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase{
                                 }
 
                                 if((type!=preWordType && preWordType!=null) || i==textArray.length-1){
-                                    let InlineString = new FortuneInlineString();
+                                    let InlineString:any = {};
 
                                     InlineString.ff = preWholef;
 
@@ -593,7 +593,7 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase{
                                             InlineString.v = wordText;
                                             cellFormat.s.push(InlineString);
 
-                                            let InlineStringLast = new FortuneInlineString();
+                                            let InlineStringLast:any = {};
                                             InlineStringLast.ff = ff;
                                             InlineStringLast.v = w;
                                             if(cellValue.fc!=null){
@@ -653,7 +653,7 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase{
                             text = this.replaceSpecialWrap(text);
 
                             if(text.indexOf("\r\n")>-1 || text.indexOf("\n")>-1){
-                                let InlineString = new FortuneInlineString();
+                                let InlineString:any = {};
                                 InlineString.v = text;
                                 let cellFormat = cellValue.ct;
                                 if(cellFormat==null){
@@ -701,12 +701,12 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase{
                     }
                 }
                 else{
-                    let styles:FortuneInlineString[] = [];
+                    let styles:any = [];
                     rFlag.forEach((r)=>{
                         let tFlag = r.getInnerElements("t");
                         let rPr = r.getInnerElements("rPr");
 
-                        let InlineString = new FortuneInlineString();
+                        let InlineString:any = {};
 
                         if(tFlag!=null && tFlag.length>0){
                             let text = tFlag[0].value;
