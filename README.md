@@ -47,10 +47,7 @@ console.log(
 
 1. Add plugin support in FortuneSheet
 2. Add plugin support in this project
-3. FortuneSheet fixes for FortuneExcel
-   1. import fix: font size, bold, italics, font family
-   2. [Issue #504](https://github.com/ruilisi/fortune-sheet/issues/504)
-4. publish FortuneExcel as an npm package
+3. publish FortuneExcel as an npm package
 
 ## Authors and acknowledgment
 
