@@ -1,12 +1,13 @@
-# FortuneSheetExcel
+# FortuneExcel
 
-FortuneSheetExcel is an Excel import library for [FortuneSheet](https://github.com/ruilisi/fortune-sheet/). It only supports .xlsx format files (not .xls).
+FortuneExcel is an import/export library for [FortuneSheet](https://github.com/ruilisi/fortune-sheet/).
+It only supports .xlsx format files (not .xls).
 
-It is a FortuneSheet port of [Luckyexcel](https://github.com/dream-num/Luckyexcel).
+It is a fork of (now archived) FortuneSheetExcel.
 
 ## Features
 
-Supports the following spreadsheet features:
+Supports the following spreadsheet features in import/export:
 
 - Cell style
 - Cell border
@@ -14,6 +15,8 @@ Supports the following spreadsheet features:
 - Formula
 
 ## Usage
+
+> NOTE: to be modified as a plugin for FortuneSheet
 
 ```js
 import { transformExcelToFortune } from 'FortuneSheetExcel';
@@ -32,8 +35,15 @@ console.log((await (await import("FortuneSheetExcel")).FortuneExcel.transformExc
 // in dev: console.log((await (await import("./dist/main.js")).FortuneExcel.transformExcelToFortune(f)).toJsonString())
 ```
 
+## TODO
+1. Add plugin support in FortuneSheet
+2. Add plugin support in this project
+3. import fix: font size, bold, italics, font family
+4. publish FortuneExcel as an npm package
+
 ## Authors and acknowledgment
 
+- [@Corbe30](https://github.com/Corbe30)
 - [@wbfsa](https://github.com/wbfsa)
 - [@wpxp123456](https://github.com/wpxp123456)
 - [@Dushusir](https://github.com/Dushusir)
