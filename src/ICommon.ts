@@ -24,3 +24,18 @@ export interface IDataVerificationMap {
 export interface IDataVerificationType2Map {
     [key: string]: { [key: string]: string };
 }
+
+export interface IBorderSide {
+    color: string, style: number;
+}
+
+export interface IBorderInfo {
+    b: IBorderSide,
+    l: IBorderSide,
+    r: IBorderSide,
+    t: IBorderSide,
+}
+
+export interface IBorderInfoCompute {
+    [key: string]: IBorderInfo
+}

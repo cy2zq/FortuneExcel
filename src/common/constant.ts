@@ -243,3 +243,5 @@ export const DATA_VERIFICATION_TYPE2_MAP: IDataVerificationType2Map = {
       phone: "phone",
     },
 };
+
+export const ALIGNMENT_DEFAULT: number = -1;

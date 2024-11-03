@@ -1,7 +1,7 @@
 import { columeHeader_word, columeHeader_word_index } from "./constant.js";
 import { IfortuneSheetSelection } from "../ToFortuneSheet/IFortune.js";
 import { IattributeList, stringToNum} from "../ICommon.js";
-
+import ExcelJS from "exceljs";
 
 export function getRangetxt(range:IfortuneSheetSelection, sheettxt:string) {
 
@@ -1055,3 +1055,53 @@ export function getMultiFormulaValue(value: string): string[] {
   }
   return retArr;
 }
+
+export var setMerge = function (luckyMerge = {}, worksheet: ExcelJS.Worksheet) {
+    const mergearr = Object.values(luckyMerge);
+    mergearr.forEach(function (elem: any) {
+      // elem格式：{r: 0, c: 0, rs: 1, cs: 2}
+      // 按开始行，开始列，结束行，结束列合并（相当于 K10:M12）
+      worksheet.mergeCells(
+        elem.r + 1,
+        elem.c + 1,
+        elem.r + elem.rs,
+        elem.c + elem.cs
+      );
+    });
+};
+  
+//获取数据类型
+export var getObjType = function (obj: Object) {
+    let toString = Object.prototype.toString;
+  
+    let map: { [key: string]: string } = {
+      "[object Boolean]": "boolean",
+      "[object Number]": "number",
+      "[object String]": "string",
+      "[object Function]": "function",
+      "[object Array]": "array",
+      "[object Date]": "date",
+      "[object RegExp]": "regExp",
+      "[object Undefined]": "undefined",
+      "[object Null]": "null",
+      "[object Object]": "object",
+    };
+    return map[toString.call(obj)];
+};
+  
+//转换颜色
+export var rgb2hex = function (rgb: string) {
+    if (rgb.charAt(0) == "#") {
+      return rgb;
+    }
+  
+    var ds = rgb.split(/\D+/);
+    var decimal = Number(ds[1]) * 65536 + Number(ds[2]) * 256 + Number(ds[3]);
+    return "#" + zero_fill_hex(decimal, 6);
+  
+    function zero_fill_hex(num: number, digits: number) {
+      var s = num.toString(16);
+      while (s.length < digits) s = "0" + s;
+      return s;
+    }
+};

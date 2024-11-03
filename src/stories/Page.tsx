@@ -1,5 +1,5 @@
 import React from 'react';
-import { transformExcelToFortune } from '../main.js';
+import { transformExcelToFortune, transformFortuneToExcel } from '../main.js';
 import { Sheet } from "@fortune-sheet/core";
 import { Workbook } from "@fortune-sheet/react";
 import "@fortune-sheet/react/dist/index.css"
@@ -7,7 +7,7 @@ import "@fortune-sheet/react/dist/index.css"
 export const Page: React.FC = () => {
   const [sheets, setSheets] = React.useState<Sheet[]>([{ name: "Sheet1" }]);
   const [key, setKey] = React.useState<number>(0);
-  const sheetRef = React.useRef(0);
+  const sheetRef: any = React.useRef(null);
 
   return (
     <div
@@ -27,6 +27,11 @@ export const Page: React.FC = () => {
           setKey(k => k + 1)
           console.log('Loaded', lsh, 'into', sheetRef) // Log the dynamic object that will be changed by the engine
         }}/>
+      </header>
+      <header>
+        Export XLSX: <button onClick={async (e) => {
+          await transformFortuneToExcel(sheetRef.current);
+        }}>Export</button>
       </header>
       <Workbook key={key} ref={sheetRef} data={sheets} style={{ flex: '1' }} onChange={() => {
         // XXX: Unfortunately FortuneSheet does not (yet) apply the format when we initialize it with values
