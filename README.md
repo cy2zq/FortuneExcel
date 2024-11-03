@@ -48,6 +48,7 @@ console.log(
 1. Add plugin support in FortuneSheet
 2. Add plugin support in this project
 3. publish FortuneExcel as an npm package
+4. Column/row resize broken after import
 
 ## Authors and acknowledgment
 
