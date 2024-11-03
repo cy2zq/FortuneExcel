@@ -19,19 +19,27 @@ Supports the following spreadsheet features in import/export:
 > NOTE: to be modified as a plugin for FortuneSheet
 
 ```js
-import { transformExcelToFortune } from 'FortuneSheetExcel';
+import { transformExcelToFortune } from "FortuneSheetExcel";
 
 // e.g. got a file input change event
-const xls = await e.target.files[0].arrayBuffer()
-const fsh = await transformExcelToFortune(xls)
-setData(fsh.sheets) // use this as the Workbook data
+const xls = await e.target.files[0].arrayBuffer();
+const fsh = await transformExcelToFortune(xls);
+setData(fsh.sheets); // use this as the Workbook data
 ```
 
 Interactively in a node repl:
 
 ```js
-f = await (await import("node:fs/promises")).readFile('/home/val/Downloads/Silkscreen.xlsx')
-console.log((await (await import("FortuneSheetExcel")).FortuneExcel.transformExcelToFortune(f)).toJsonString())
+f = await (
+  await import("node:fs/promises")
+).readFile("/home/val/Downloads/Silkscreen.xlsx");
+console.log(
+  (
+    await (
+      await import("FortuneSheetExcel")
+    ).FortuneExcel.transformExcelToFortune(f)
+  ).toJsonString()
+);
 // in dev: console.log((await (await import("./dist/main.js")).FortuneExcel.transformExcelToFortune(f)).toJsonString())
 ```
 

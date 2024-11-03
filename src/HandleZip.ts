@@ -11,7 +11,7 @@ export class HandleZip {
 
   async unzipFile(): Promise<IuploadfileList> {
     const zip = await JSZip.loadAsync(this.uploadFile);
-    const fileList: IuploadfileList = <IuploadfileList> {};
+    const fileList: IuploadfileList = <IuploadfileList>{};
     for (const [_path, zipEntry] of Object.entries(zip.files)) {
       const fileName = zipEntry.name;
       const fileNameArr = fileName.split(".");
@@ -19,15 +19,15 @@ export class HandleZip {
       let fileType: JSZip.OutputType = "string";
       if (
         suffix in
-          {
-            "png": 1,
-            "jpeg": 1,
-            "jpg": 1,
-            "gif": 1,
-            "bmp": 1,
-            "tif": 1,
-            "webp": 1,
-          }
+        {
+          png: 1,
+          jpeg: 1,
+          jpg: 1,
+          gif: 1,
+          bmp: 1,
+          tif: 1,
+          webp: 1,
+        }
       ) {
         fileType = "base64";
       } else if (suffix == "emf") {
@@ -38,7 +38,7 @@ export class HandleZip {
         data = "data:image/" + suffix + ";base64," + data;
       }
       fileList[zipEntry.name] = data as string; // XXX: ignore EMF ArrayBuffer :/
-    };
+    }
     return fileList;
   }
 }

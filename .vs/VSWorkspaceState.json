@@ -1,9 +1,5 @@
 {
-  "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\tofortuneSheet"
-  ],
+  "ExpandedNodes": ["", "\\src", "\\src\\tofortuneSheet"],
   "SelectedNode": "\\src\\tofortuneSheet\\fortuneFreezen.ts",
   "PreviewInSolutionExplorer": false
 }

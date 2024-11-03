@@ -110,4 +110,4 @@ var alignmentConvert = function (
   return alignment;
 };
 
-export {fillConvert, fontConvert, alignmentConvert};
+export { fillConvert, fontConvert, alignmentConvert };

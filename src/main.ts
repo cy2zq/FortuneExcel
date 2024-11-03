@@ -2,10 +2,10 @@ import { FortuneFile } from "./ToFortuneSheet/FortuneFile.js";
 import type { FortuneFileBase } from "./ToFortuneSheet/FortuneBase.ts";
 import { HandleZip } from "./HandleZip.js";
 import { WorkbookInstance } from "@fortune-sheet/react";
-import { exportSheetExcel } from './ToExcel/ExcelFile.js';
+import { exportSheetExcel } from "./ToExcel/ExcelFile.js";
 
 export const transformExcelToFortune = async (
-  excelFile: File,
+  excelFile: File
 ): Promise<FortuneFileBase> => {
   const files = await new HandleZip(excelFile).unzipFile();
   const fortuneFile = new FortuneFile(files, excelFile.name);
