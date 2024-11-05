@@ -18,6 +18,8 @@ Supports the following spreadsheet features in import/export:
 
 > NOTE: to be modified as a plugin for FortuneSheet
 
+For best results, import and export a single sheet at a time. Although you can force FortuneExcel to handle multiple sheets, certain configurations may break.
+
 ```js
 import { transformExcelToFortune } from "FortuneSheetExcel";
 
@@ -48,7 +50,6 @@ console.log(
 1. Add plugin support in FortuneSheet
 2. Add plugin support in this project
 3. publish FortuneExcel as an npm package
-4. Column/row resize broken after import
 
 ## Authors and acknowledgment
 
