@@ -15,7 +15,6 @@ export const transformExcelToFortune = async (
 
 export const transformFortuneToExcel = async (
   luckysheetRef: WorkbookInstance,
-  name = "file"
 ) => {
-  await exportSheetExcel(luckysheetRef, name);
+  await exportSheetExcel(luckysheetRef);
 };

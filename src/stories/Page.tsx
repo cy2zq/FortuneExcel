@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { transformExcelToFortune, transformFortuneToExcel } from "../main.js";
 import { Sheet } from "@fortune-sheet/core";
 import { Workbook } from "@fortune-sheet/react";
@@ -8,6 +8,17 @@ export const Page: React.FC = () => {
   const [sheets, setSheets] = React.useState<Sheet[]>([{ name: "Sheet1" }]);
   const [key, setKey] = React.useState<number>(0);
   const sheetRef: any = React.useRef(null);
+  const configRef: any = React.useRef(null);
+  const [rerender, setRerender] = React.useState<boolean>(true);
+
+  useEffect(() => {
+    setRerender(!rerender);
+  }, [sheets]);
+
+  useEffect(() => {
+    sheetRef.current?.setColumnWidth(configRef.current?.columnlen || {});
+    sheetRef.current?.setRowHeight(configRef.current?.rowlen || {});
+  }, [rerender]);
 
   return (
     <div
@@ -25,10 +36,12 @@ export const Page: React.FC = () => {
           onChange={async (e) => {
             const xls = await e.target.files[0].arrayBuffer();
             const lsh = await transformExcelToFortune(xls);
-            console.log("Loading", JSON.parse(JSON.stringify(lsh))); // Log the static as-read result
+            configRef.current = lsh.sheets[0].config;
+            for (let sheet of lsh.sheets) {
+              delete sheet.config;
+            }
             setSheets(lsh.sheets);
             setKey((k) => k + 1);
-            console.log("Loaded", lsh, "into", sheetRef); // Log the dynamic object that will be changed by the engine
           }}
         />
       </header>

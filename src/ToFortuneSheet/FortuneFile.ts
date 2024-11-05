@@ -480,7 +480,7 @@ export class FortuneFile {
     FortuneOutPutFile.sheets = [];
 
     for (const sheet of this.sheets!) {
-      const sheetout = new FortuneSheetBase();
+      const sheetout:any = {};
       //let attrName = ["name","color","config","index","status","order","row","column","luckysheet_select_save","scrollLeft","scrollTop","zoomRatio","showGridLines","defaultColWidth","defaultRowHeight","celldata","chart","isPivotTable","pivotTable","luckysheet_conditionformat_save","freezen","calcChain"];
 
       if (sheet.name != null) {
