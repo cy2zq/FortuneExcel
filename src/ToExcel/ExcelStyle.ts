@@ -1,4 +1,4 @@
-import ExcelJS from "exceljs";
+import ExcelJS, { CellValue } from "exceljs";
 import { WorkbookInstance } from "@fortune-sheet/react";
 import { CellMatrix } from "@fortune-sheet/core";
 import { fillConvert, fontConvert, alignmentConvert } from "./ExcelConvert.js";
@@ -37,19 +37,25 @@ var setStyleAndValue = function (
         cell.tb && parseInt(cell.tb, 10),
         cell.tr && parseInt(cell.tr, 10)
       );
-      let value;
+      let value: CellValue;
 
-      var v = "";
+      var v: number | string | boolean | Date = undefined;
+      // TODO: check and add support for currency, boolean, date format
       if (cell.ct && cell.ct.t == "inlineStr") {
         var s = cell.ct.s;
         s.forEach(function (val: any, num: any) {
           v += val.v;
         });
+      } else if (cell.ct && cell.ct.t == "n") {
+        v = +cell.v;
       } else {
         v = cell.v as string;
       }
       if (cell.f) {
-        value = { formula: cell.f, result: v };
+        value = {
+          formula: cell.f.startsWith("=") ? cell.f.slice(1) : cell.f,
+          result: v,
+        };
       } else {
         value = v;
       }
