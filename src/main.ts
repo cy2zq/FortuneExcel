@@ -5,16 +5,33 @@ import { WorkbookInstance } from "@fortune-sheet/react";
 import { exportSheetExcel } from "./ToExcel/ExcelFile.js";
 
 export const transformExcelToFortune = async (
-  excelFile: File
-): Promise<FortuneFileBase> => {
+  e: any,
+  setSheets: any,
+  setKey: any,
+  sheetRef: any
+) => {
+  const excelFile = await e.target.files[0].arrayBuffer();
   const files = await new HandleZip(excelFile).unzipFile();
   const fortuneFile = new FortuneFile(files, excelFile.name);
   fortuneFile.Parse();
-  return fortuneFile.serialize();
+
+  const lsh = fortuneFile.serialize();
+
+  let config = lsh.sheets[0].config;
+  for (let sheet of lsh.sheets) {
+    delete sheet.config;
+  }
+  setSheets(lsh.sheets);
+  setKey((k: number) => k + 1);
+
+  setTimeout(() => {
+    sheetRef.current?.setColumnWidth(config?.columnlen || {});
+    sheetRef.current?.setRowHeight(config?.rowlen || {});
+  }, 1);
 };
 
 export const transformFortuneToExcel = async (
-  luckysheetRef: WorkbookInstance,
+  luckysheetRef: WorkbookInstance
 ) => {
   await exportSheetExcel(luckysheetRef);
 };
