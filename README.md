@@ -45,12 +45,6 @@ console.log(
 // in dev: console.log((await (await import("./dist/main.js")).FortuneExcel.transformExcelToFortune(f)).toJsonString())
 ```
 
-## TODO
-
-1. Add plugin support in FortuneSheet
-2. Add plugin support in this project
-3. publish FortuneExcel as an npm package
-
 ## Authors and acknowledgment
 
 - [@Corbe30](https://github.com/Corbe30)
