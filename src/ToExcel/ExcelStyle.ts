@@ -37,7 +37,7 @@ var setStyleAndValue = function (
       );
       let value: CellValue;
 
-      var v: number | string | boolean | Date = undefined;
+      var v: number | string | boolean | Date = "";
       // TODO: check and add support for currency, boolean, date format
       if (cell.ct && cell.ct.t == "inlineStr") {
         var s = cell.ct.s;
