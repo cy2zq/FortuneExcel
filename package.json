@@ -1,7 +1,7 @@
 {
-  "name": "@zenmrp/fortune-sheet-excel",
+  "name": "@corbe30/fortune-excel",
   "version": "1.0.3",
-  "description": "An Excel-to-FortuneSheet import library",
+  "description": "An Excel import/export import library for FortuneSheet",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "type": "module",
@@ -10,11 +10,11 @@
     "spreadsheet",
     "excel"
   ],
-  "author": "msoffice2@126.com",
-  "homepage": "https://github.com/zenmrp/FortuneSheetExcel",
+  "author": "shashankc1705@gmail.com",
+  "homepage": "https://github.com/Corbe30/FortuneExcel",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zenmrp/FortuneSheetExcel.git"
+    "url": "https://github.com/Corbe30/FortuneExcel.git"
   },
   "license": "MIT",
   "devDependencies": {

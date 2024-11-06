@@ -1,11 +1,9 @@
 import ExcelJS, { CellValue } from "exceljs";
-import { WorkbookInstance } from "@fortune-sheet/react";
-import { CellMatrix } from "@fortune-sheet/core";
 import { fillConvert, fontConvert, alignmentConvert } from "./ExcelConvert.js";
 
 var setStyleAndValue = function (
-  luckysheet: WorkbookInstance,
-  cellArr: CellMatrix,
+  luckysheet: any,
+  cellArr: any,
   worksheet: ExcelJS.Worksheet
 ) {
   if (!Array.isArray(cellArr)) return;
@@ -14,7 +12,7 @@ var setStyleAndValue = function (
     const dbrow = worksheet.getRow(rowid + 1);
     //设置单元格行高,默认乘以1.2倍
     dbrow.height = luckysheet.getRowHeight([rowid])[rowid] / 1.2;
-    row.every(function (cell, columnid) {
+    row.every(function (cell:any, columnid:any) {
       if (!cell) return true;
       if (rowid == 0) {
         const dobCol = worksheet.getColumn(columnid + 1);

@@ -1,9 +1,8 @@
 import ExcelJS from "exceljs";
-import { Sheet } from "@fortune-sheet/core";
 import { IBorderInfo, IBorderInfoCompute, IBorderSide } from "../ICommon.js";
 import { getObjType, rgb2hex } from "../common/method.js";
 
-var setBorder = function (lucksheetfile: Sheet, worksheet: ExcelJS.Worksheet) {
+var setBorder = function (lucksheetfile: any, worksheet: ExcelJS.Worksheet) {
   if (!lucksheetfile) return;
   const luckyToExcel: {
     style: { [key: number]: ExcelJS.BorderStyle | "none" };
@@ -68,7 +67,7 @@ var setBorder = function (lucksheetfile: Sheet, worksheet: ExcelJS.Worksheet) {
   }
 };
 
-var getBorderInfo = function (luckysheetfile: Sheet) {
+var getBorderInfo = function (luckysheetfile: any) {
   let borderInfoCompute: IBorderInfoCompute = {};
   let cfg = luckysheetfile.config;
   let data = luckysheetfile.data;

@@ -1,7 +1,5 @@
 import { FortuneFile } from "./ToFortuneSheet/FortuneFile.js";
-import type { FortuneFileBase } from "./ToFortuneSheet/FortuneBase.ts";
 import { HandleZip } from "./HandleZip.js";
-import { WorkbookInstance } from "@fortune-sheet/react";
 import { exportSheetExcel } from "./ToExcel/ExcelFile.js";
 
 export const transformExcelToFortune = async (
@@ -31,7 +29,7 @@ export const transformExcelToFortune = async (
 };
 
 export const transformFortuneToExcel = async (
-  luckysheetRef: WorkbookInstance
+  luckysheetRef: any
 ) => {
   await exportSheetExcel(luckysheetRef);
 };
