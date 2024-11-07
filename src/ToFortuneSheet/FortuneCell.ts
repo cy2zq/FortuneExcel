@@ -119,7 +119,7 @@ export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
       // console.log(ref, t, si);
       if (ref != null || (formulaValue != null && formulaValue.length > 0)) {
         formulaValue = escapeCharacter(formulaValue);
-        cellValue.f = "=" + formulaValue;
+        cellValue.f = (formulaValue.startsWith('=') ? "" : "=") + formulaValue;
       }
     }
 

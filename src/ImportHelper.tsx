@@ -1,7 +1,7 @@
 import React from "react";
-import { transformExcelToFortune } from "./main";
+import { transformExcelToFortune } from "./Transform.js";
 
-export default function ImportHelper(props) {
+export const ImportHelper = (props:any) => {
     const {
         setSheets, setKey, sheetRef
     } = props;

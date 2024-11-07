@@ -1,13 +1,14 @@
 {
   "files": ["src/main.ts"],
   "compilerOptions": {
+    "jsx": "react",
     "noImplicitAny": true,
     "declaration": true,
-    "target": "es2017",
+    "target": "es5",
     "outDir": "dist/",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "module": "node16",
-    "moduleResolution": "node16"
+    "module": "es2015",
+    "moduleResolution": "node",
   }
 }

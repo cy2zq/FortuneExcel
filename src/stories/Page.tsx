@@ -3,7 +3,7 @@ import { Sheet } from "@fortune-sheet/core";
 import { Workbook } from "@fortune-sheet/react";
 import "@fortune-sheet/react/dist/index.css";
 import { exportToolBarItem, importToolBarItem } from "../ToolbarItem.js";
-import ImportHelper from "../ImportHelper.jsx";
+import { ImportHelper } from "../ImportHelper.jsx";
 
 export const Page: React.FC = () => {
   const [key, setKey] = React.useState<number>(0);

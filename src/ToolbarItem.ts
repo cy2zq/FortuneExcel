@@ -1,13 +1,13 @@
-import ExportIcon from "./icons/ExportIcon";
-import ImportIcon from "./icons/ImportIcon";
-import { transformFortuneToExcel } from "./main";
+import ExportIcon from "./icons/ExportIcon.js";
+import ImportIcon from "./icons/ImportIcon.js";
+import { transformFortuneToExcel } from "./Transform.js";
 
-export const exportToolBarItem = (sheetRef) => {
+export const exportToolBarItem = (sheetRef:any) => {
   return {
     key: "export",
     tooltip: "export .xlsl",
     icon: ExportIcon(),
-    onClick: async (e) => {
+    onClick: async (e:any) => {
       await transformFortuneToExcel(sheetRef.current);
     },
   };
@@ -18,7 +18,7 @@ export const importToolBarItem = () => {
     key: "import",
     tooltip: "import .xlsl",
     icon: ImportIcon(),
-    onClick: (e) => {
+    onClick: (e:any) => {
       document.getElementById("ImportHelper")?.click();
     },
   };
