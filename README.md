@@ -3,7 +3,7 @@
 FortuneExcel is an import/export library for [FortuneSheet](https://github.com/ruilisi/fortune-sheet/).
 It only supports .xlsx format files (not .xls).
 
-It is a fork of (now archived) FortuneSheetExcel.
+It is a fork of (now archived) [FortuneSheetExcel](https://github.com/zenmrp/FortuneSheetExcel).
 
 ## Features
 
@@ -16,34 +16,34 @@ Supports the following spreadsheet features in import/export:
 
 ## Usage
 
-> NOTE: to be modified as a plugin for FortuneSheet
-
 For best results, import and export a single sheet at a time. Although you can force FortuneExcel to handle multiple sheets, certain configurations may break.
 
+### React frontend
+`ImportHelper` is a hidden component and only required when using `importToolBarItem`.
 ```js
-import { transformExcelToFortune } from "FortuneSheetExcel";
+import { importToolBarItem, ImportHelper, exportToolBarItem } from "fortune-excel";
 
-// e.g. got a file input change event
-const xls = await e.target.files[0].arrayBuffer();
-const fsh = await transformExcelToFortune(xls);
-setData(fsh.sheets); // use this as the Workbook data
+function App() {
+  const workbookRef = useRef();
+  const [key, setKey] = useState(0);
+  const [sheets, setSheets] = useState(data);
+
+  return (
+    <>
+      <ImportHelper setKey={setKey} setSheets={setSheets} sheetRef={workbookRef1} />
+      <Workbook
+        key={key}
+        data={sheets}
+        ref={workbookRef}
+        customToolbarItems={[exportToolBarItem(workbookRef), importToolBarItem()]}
+      />
+    </>
+  );
+}
 ```
 
-Interactively in a node repl:
-
-```js
-f = await (
-  await import("node:fs/promises")
-).readFile("/home/val/Downloads/Silkscreen.xlsx");
-console.log(
-  (
-    await (
-      await import("FortuneSheetExcel")
-    ).FortuneExcel.transformExcelToFortune(f)
-  ).toJsonString()
-);
-// in dev: console.log((await (await import("./dist/main.js")).FortuneExcel.transformExcelToFortune(f)).toJsonString())
-```
+### Node backend
+to be updated
 
 ## Authors and acknowledgment
 
