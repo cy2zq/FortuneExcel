@@ -1,9 +1,6 @@
 # FortuneExcel
 
-FortuneExcel is an import/export library for [FortuneSheet](https://github.com/ruilisi/fortune-sheet/).
-It only supports .xlsx format files (not .xls).
-
-It is a fork of (now archived) [FortuneSheetExcel](https://github.com/zenmrp/FortuneSheetExcel).
+FortuneExcel is an import/export library for [FortuneSheet](https://github.com/ruilisi/fortune-sheet/). It only supports .xlsx files (not .xls).
 
 ## Features
 
@@ -18,8 +15,13 @@ Supports the following spreadsheet features in import/export:
 
 For best results, import and export a single sheet at a time. Although you can force FortuneExcel to handle multiple sheets, certain configurations may break.
 
-### React frontend
-`ImportHelper` is a hidden component and only required when using `importToolBarItem`.
+1. Install the package:
+```js
+npm i @corbe30/fortune-excel
+```
+
+2. Add import/export toolbar item in fortune-sheet
+> `<ImportHelper />` is a hidden component and only required when using `importToolBarItem()`.
 ```js
 import { importToolBarItem, ImportHelper, exportToolBarItem } from "fortune-excel";
 
@@ -41,9 +43,6 @@ function App() {
   );
 }
 ```
-
-### Node backend
-to be updated
 
 ## Authors and acknowledgment
 
