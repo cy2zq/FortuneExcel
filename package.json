@@ -14,7 +14,7 @@
   "homepage": "https://github.com/Corbe30/FortuneExcel",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Corbe30/FortuneExcel.git"
+    "url": "git+https://github.com/Corbe30/FortuneExcel.git"
   },
   "license": "MIT",
   "devDependencies": {
