@@ -32,7 +32,7 @@ function App() {
 
   return (
     <>
-      <ImportHelper setKey={setKey} setSheets={setSheets} sheetRef={workbookRef1} />
+      <ImportHelper setKey={setKey} setSheets={setSheets} sheetRef={workbookRef} />
       <Workbook
         key={key}
         data={sheets}
