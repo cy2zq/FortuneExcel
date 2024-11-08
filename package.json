@@ -1,6 +1,6 @@
 {
   "name": "@corbe30/fortune-excel",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "An Excel import/export import library for FortuneSheet",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -11,7 +11,7 @@
     "excel"
   ],
   "author": "shashankc1705@gmail.com",
-  "homepage": "https://github.com/Corbe30/FortuneExcel",
+  "homepage": "https://corbe30.github.io/FortuneExcel",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Corbe30/FortuneExcel.git"

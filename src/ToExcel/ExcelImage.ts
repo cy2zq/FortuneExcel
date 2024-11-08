@@ -45,13 +45,42 @@ var setImages = function (table: any, worksheet: any, workbook: any) {
       extension: "png",
     });
 
-    const col_st = getImagePosition(item.default.left, visibledatacolumn);
-    const row_st = getImagePosition(item.default.top, visibledatarow);
+    if (!visibledatacolumn || !visibledatarow) {
+      const defaultColWidth = localTable.defaultColWidth || 73;
+      const defaultRowHeight = localTable.defaultRowHeight || 19;
+      
+      const rowCount = localTable.data.length;
+      const colCount = localTable.data[0].length;
+      
+      visibledatacolumn = [];
+      visibledatarow = [];
+
+      let lastVal = 0;
+      for (let i=0; i<rowCount; i++) {
+        const rowHeight = (localTable.config?.rowlen?.[i] || defaultRowHeight);
+        const rowPosition = lastVal + rowHeight;
+        
+        visibledatarow.push(rowPosition);
+        lastVal = rowPosition;
+      }
+
+      lastVal = 0;
+      for (let i=0; i<colCount; i++) {
+        const colWidth = (localTable.config?.columnlen?.[i] || defaultColWidth);
+        const colPosition = lastVal + colWidth;
+        
+        visibledatacolumn.push(colPosition);
+        lastVal = colPosition;
+      }
+    }
+
+    const col_st = getImagePosition(item.left, visibledatacolumn);
+    const row_st = getImagePosition(item.top, visibledatarow);
 
     //模式1，图片左侧与luckysheet位置一样，像素比例保持不变，但是，右侧位置可能与原图所在单元格不一致
     worksheet.addImage(imageId, {
       tl: { col: col_st, row: row_st },
-      ext: { width: item.default.width, height: item.default.height },
+      ext: { width: item.width, height: item.height },
     });
     //模式2,图片四个角位置没有变动，但是图片像素比例可能和原图不一样
     // const w_ed = item.default.left+item.default.width;
