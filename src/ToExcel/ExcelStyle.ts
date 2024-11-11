@@ -1,6 +1,10 @@
 import ExcelJS, { CellValue } from "exceljs";
 import { fillConvert, fontConvert, alignmentConvert } from "./ExcelConvert.js";
 
+const isTime = (d:string) => {
+  return d === "hh:mm";
+};
+
 var setStyleAndValue = function (
   luckysheet: any,
   cellArr: any,
@@ -12,7 +16,7 @@ var setStyleAndValue = function (
     const dbrow = worksheet.getRow(rowid + 1);
     //设置单元格行高,默认乘以1.2倍
     dbrow.height = luckysheet.getRowHeight([rowid])[rowid] / 1.2;
-    row.every(function (cell:any, columnid:any) {
+    row.every(function (cell: any, columnid: any) {
       if (!cell) return true;
       if (rowid == 0) {
         const dobCol = worksheet.getColumn(columnid + 1);
@@ -38,6 +42,7 @@ var setStyleAndValue = function (
       let value: CellValue;
 
       var v: number | string | boolean | Date = "";
+      var numFmt: string = undefined;
       // TODO: check and add support for currency, boolean, date format
       if (cell.ct && cell.ct.t == "inlineStr") {
         var s = cell.ct.s;
@@ -46,6 +51,11 @@ var setStyleAndValue = function (
         });
       } else if (cell.ct && cell.ct.t == "n") {
         v = +cell.v;
+        if (cell.ct !== "General") numFmt = cell.ct.fa;
+      } else if (cell.ct.t == "d") {
+        const mockDate = isTime(cell.ct.fa) ? "2000-01-01 " : "";
+        v = new Date(mockDate + cell.m);
+        numFmt = cell.ct.fa;
       } else {
         v = cell.v as string;
       }
@@ -62,6 +72,7 @@ var setStyleAndValue = function (
       target.font = font;
       target.alignment = alignment;
       target.value = value;
+      target.numFmt = numFmt;
       return true;
     });
   });

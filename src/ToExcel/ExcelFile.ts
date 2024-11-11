@@ -27,5 +27,5 @@ export async function exportSheetExcel(
   const buffer = await workbook.xlsx.writeBuffer();
   const fileData = new Blob([buffer]);
   // 5.保存为文件
-  fileSaver.saveAs(fileData, "abc.xlsx");
+  fileSaver.saveAs(fileData, `${luckysheetRef.getSheet().name}.xlsx`);
 }
