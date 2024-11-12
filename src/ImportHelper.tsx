@@ -9,6 +9,7 @@ export const ImportHelper = (props:any) => {
         <input
         type="file"
         id="ImportHelper"
+        accept=".xlsx"
         onChange={async (e) => {
           await transformExcelToFortune(e, setSheets, setKey, sheetRef);
         }}

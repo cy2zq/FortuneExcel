@@ -5,7 +5,7 @@ import { transformFortuneToExcel } from "./Transform.js";
 export const exportToolBarItem = (sheetRef:any) => {
   return {
     key: "export",
-    tooltip: "export .xlsl",
+    tooltip: "Export .xlsx",
     icon: ExportIcon(),
     onClick: async (e:any) => {
       await transformFortuneToExcel(sheetRef.current);
@@ -16,7 +16,7 @@ export const exportToolBarItem = (sheetRef:any) => {
 export const importToolBarItem = () => {
   return {
     key: "import",
-    tooltip: "import .xlsl",
+    tooltip: "Import .xlsx",
     icon: ImportIcon(),
     onClick: (e:any) => {
       document.getElementById("ImportHelper")?.click();
