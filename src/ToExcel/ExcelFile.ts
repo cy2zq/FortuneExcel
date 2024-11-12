@@ -17,7 +17,7 @@ export async function exportSheetExcel(
     if (table?.data?.length === 0) return true;
     const worksheet = workbook.addWorksheet(table.name);
     // 3.设置单元格合并,设置单元格边框,设置单元格样式,设置值
-    setStyleAndValue(luckysheetRef, table.data, worksheet);
+    setStyleAndValue(luckysheetRef, table, worksheet);
     setMerge(table?.config?.merge, worksheet);
     setBorder(table, worksheet);
     setImages(table, worksheet, workbook);

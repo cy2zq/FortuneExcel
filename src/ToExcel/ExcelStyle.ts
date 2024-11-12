@@ -1,15 +1,21 @@
-import ExcelJS, { CellValue } from "exceljs";
+import ExcelJS, { CellHyperlinkValue, CellValue } from "exceljs";
 import { fillConvert, fontConvert, alignmentConvert } from "./ExcelConvert.js";
 
-const isTime = (d:string) => {
+const isTime = (d: string) => {
   return d === "hh:mm";
+};
+
+const formatHyperlink = (address: string) => {
+  const sheetCell = address.split("!");
+  return `#\'${sheetCell[0]}\'!${sheetCell[1] || "A1"}`;
 };
 
 var setStyleAndValue = function (
   luckysheet: any,
-  cellArr: any,
+  table: any,
   worksheet: ExcelJS.Worksheet
 ) {
+  const cellArr = table?.data;
   if (!Array.isArray(cellArr)) return;
 
   cellArr.forEach(function (row, rowid) {
@@ -41,10 +47,26 @@ var setStyleAndValue = function (
       );
       let value: CellValue;
 
-      var v: number | string | boolean | Date = "";
+      var v: number | string | boolean | Date | CellHyperlinkValue = "";
       var numFmt: string = undefined;
-      // TODO: check and add support for currency, boolean, date format
-      if (cell.ct && cell.ct.t == "inlineStr") {
+
+      if (cell.hl) {
+        const hlData = table.hyperlink?.[`${cell.hl.r}_${cell.hl.c}`];
+        if (hlData?.linkType === "webpage") {
+          v = {
+            text: cell.v,
+            hyperlink: hlData?.linkAddress,
+            tooltip: cell.v,
+          };
+        }
+        // will not work in Google Sheets but will work in excel (open issue in exceljs)
+        else if (
+          hlData.linkType === "cellrange" ||
+          hlData.linkType === "sheet"
+        ) {
+          v = { text: cell.v, hyperlink: formatHyperlink(hlData?.linkAddress) };
+        }
+      } else if (cell.ct && cell.ct.t == "inlineStr") {
         var s = cell.ct.s;
         s.forEach(function (val: any, num: any) {
           v += val.v;
@@ -59,7 +81,7 @@ var setStyleAndValue = function (
       } else {
         v = cell.v as string;
       }
-      if (cell.f) {
+      if (cell.f && typeof v !== "object") {
         value = {
           formula: cell.f.startsWith("=") ? cell.f.slice(1) : cell.f,
           result: v,
