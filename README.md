@@ -6,8 +6,8 @@
 
 <a href="http://npmjs.com/package/@corbe30/fortune-excel" alt="fortuneExcel downloads">
 <img src="https://img.shields.io/npm/d18m/%40corbe30%2Ffortune-excel" /></a>
-
 </p>
+
 FortuneExcel is an import/export library for [FortuneSheet](https://github.com/ruilisi/fortune-sheet/). It only supports .xlsx files (not .xls).
 
 ## Features
