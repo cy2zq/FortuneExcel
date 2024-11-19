@@ -1,23 +1,18 @@
-# FortuneExcel
+<p align="center">
+  <img align="center" src="fortuneExcelLogo.png" width="150px" height="150px" />
+</p>
+<h1 align="center">FortuneSheet</h1>
+<p align="center">FortuneExcel is an .xlsx import/export plugin for FortuneSheet.</p>
+
+<div align="center">
 
 <p>
 <a href="http://npmjs.com/package/@corbe30/fortune-excel" alt="fortuneExcel on npm">
-<img src="https://img.shields.io/npm/v/@corbe30/fortune-excel" /></a>
-
-<a href="http://npmjs.com/package/@corbe30/fortune-excel" alt="fortuneExcel downloads">
+<img src="https://img.shields.io/npm/v/@corbe30/fortune-excel" /></a> <a href="http://npmjs.com/package/@corbe30/fortune-excel" alt="fortuneExcel downloads">
 <img src="https://img.shields.io/npm/d18m/%40corbe30%2Ffortune-excel" /></a>
 </p>
 
-FortuneExcel is an import/export library for [FortuneSheet](https://github.com/ruilisi/fortune-sheet/). It only supports .xlsx files (not .xls).
-
-## Features
-
-Supports the following spreadsheet features in import/export:
-
-- Cell style
-- Cell border
-- Cell format, such as number format, date, percentage, etc.
-- Formula
+</div>
 
 ## Usage
 
@@ -31,7 +26,7 @@ npm i @corbe30/fortune-excel
 2. Add import/export toolbar item in fortune-sheet
 > `<ImportHelper />` is a hidden component and only required when using `importToolBarItem()`.
 ```js
-import { importToolBarItem, ImportHelper, exportToolBarItem } from "fortune-excel";
+import { ImportHelper, importToolBarItem, exportToolBarItem } from "fortune-excel";
 
 function App() {
   const workbookRef = useRef();
@@ -42,9 +37,7 @@ function App() {
     <>
       <ImportHelper setKey={setKey} setSheets={setSheets} sheetRef={workbookRef} />
       <Workbook
-        key={key}
-        data={sheets}
-        ref={workbookRef}
+        key={key} data={sheets} ref={workbookRef}
         customToolbarItems={[exportToolBarItem(workbookRef), importToolBarItem()]}
       />
     </>
@@ -55,6 +48,8 @@ function App() {
 ## Authors and acknowledgment
 
 - [@Corbe30](https://github.com/Corbe30)
+
+Developers of [FortuneSheetExcel](https://github.com/zenmrp/FortuneSheetExcel):
 - [@wbfsa](https://github.com/wbfsa)
 - [@wpxp123456](https://github.com/wpxp123456)
 - [@Dushusir](https://github.com/Dushusir)
