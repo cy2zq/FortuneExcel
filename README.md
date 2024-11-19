@@ -1,7 +1,7 @@
 <p align="center">
   <img align="center" src="fortuneExcelLogo.png" width="150px" height="150px" />
 </p>
-<h1 align="center">FortuneSheet</h1>
+<h1 align="center">FortuneExcel</h1>
 <p align="center">FortuneExcel is an .xlsx import/export plugin for FortuneSheet.</p>
 
 <div align="center">
