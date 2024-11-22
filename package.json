@@ -1,6 +1,6 @@
 {
   "name": "@corbe30/fortune-excel",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "description": "An Excel import/export import library for FortuneSheet",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
