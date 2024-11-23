@@ -4,6 +4,7 @@ import { setStyleAndValue } from "./ExcelStyle.js";
 import { setMerge } from "../common/method.js";
 import { setImages } from "./ExcelImage.js";
 import { setBorder } from "./ExcelBorder.js";
+import { setDataValidations } from "./ExcelValidation.js";
 
 export async function exportSheetExcel(
   luckysheetRef: any
@@ -21,6 +22,7 @@ export async function exportSheetExcel(
     setMerge(table?.config?.merge, worksheet);
     setBorder(table, worksheet);
     setImages(table, worksheet, workbook);
+    setDataValidations(table, worksheet);
     return true;
   });
   // 4.写入 buffer
