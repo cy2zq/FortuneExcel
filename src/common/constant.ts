@@ -258,6 +258,26 @@ export const DATA_VERIFICATION_MAP: IDataVerificationMap = {
   unknown3: "validity", // no match yet
 };
 
+export const DATA_VERIFICATION_REV_MAP: any = {
+  dropdown: "list",
+  number: "decimal",
+  number_integer: "decimal",
+  number_decimal: "decimal",
+  text_length: "textLength",
+  date: "date"
+};
+
+export const OPERATOR_MAP: any = {
+  between: "between",
+  notBetween: "notBetween",
+  equal: "equal",
+  notEqualTo: "notEqual",
+  moreThanThe: "greaterThan",
+  lessThan: "lessThan",
+  greaterOrEqualTo: "greaterThanOrEqual",
+  lessThanOrEqualTo: "lessThanOrEqual"
+};
+
 export const COMMON_TYPE2: string[] = [
   "number",
   "number_integer",
