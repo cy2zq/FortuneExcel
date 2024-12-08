@@ -8,7 +8,10 @@
     "outDir": "dist/",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
+    "paths": {
+      "@corbe30/fortune-excel": ["./dist/main.js"],
+    }
   }
 }
