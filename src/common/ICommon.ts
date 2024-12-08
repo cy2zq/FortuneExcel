@@ -1,4 +1,4 @@
-import { IfortunesheetDataVerificationType } from "./ToFortuneSheet/IFortune.js";
+import { IfortunesheetDataVerificationType } from "../ToFortuneSheet/IFortune.js";
 
 export interface IuploadfileList {
   [index: string]: string;

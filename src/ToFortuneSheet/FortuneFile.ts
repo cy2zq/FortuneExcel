@@ -4,7 +4,7 @@
   IfortuneSheetRowAndColumnLen,
 } from "./IFortune.js";
 import { FortuneSheet } from "./FortuneSheet.js";
-import { IuploadfileList, IattributeList } from "../ICommon.js";
+import { IuploadfileList, IattributeList } from "../common/ICommon.js";
 import {
   workBookFile,
   coreFile,

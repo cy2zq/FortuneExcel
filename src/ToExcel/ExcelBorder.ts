@@ -1,5 +1,5 @@
 import ExcelJS from "exceljs";
-import { IBorderInfo, IBorderInfoCompute, IBorderSide } from "../ICommon.js";
+import { IBorderInfo, IBorderInfoCompute, IBorderSide } from "../common/ICommon.js";
 import { getObjType, rgb2hex } from "../common/method.js";
 
 var setBorder = function (lucksheetfile: any, worksheet: ExcelJS.Worksheet) {

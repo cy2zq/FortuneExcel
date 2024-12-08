@@ -29,7 +29,7 @@ import {
   borderTypes,
   fontFamilys,
 } from "../common/constant.js";
-import { IattributeList, stringToNum } from "../ICommon.js";
+import { IattributeList, stringToNum } from "../common/ICommon.js";
 import {
   FortuneSheetborderInfoCellValueStyle,
   FortuneSheetborderInfoCellForImp,
