@@ -26,7 +26,7 @@ npm i @corbe30/fortune-excel
 2. Add import/export toolbar item in fortune-sheet
 > `<ImportHelper />` is a hidden component and only required when using `importToolBarItem()`.
 ```js
-import { ImportHelper, importToolBarItem, exportToolBarItem } from "fortune-excel";
+import { ImportHelper, importToolBarItem, exportToolBarItem } from "@corbe30/fortune-excel";
 
 function App() {
   const workbookRef = useRef();
