@@ -2,13 +2,13 @@ import React from "react";
 import { Sheet } from "@fortune-sheet/core";
 import { Workbook } from "@fortune-sheet/react";
 import "@fortune-sheet/react/dist/index.css";
-import { exportToolBarItem, importToolBarItem } from "../main.js";
-import { ImportHelper } from "../main.js";
+import { exportToolBarItem, importToolBarItem } from "@corbe30/fortune-excel";
+import { ImportHelper } from "@corbe30/fortune-excel";
 
-export const Page: React.FC = () => {
-  const [key, setKey] = React.useState<number>(0);
-  const [sheets, setSheets] = React.useState<Sheet[]>([{ name: "Sheet1" }]);
-  const sheetRef: any = React.useRef(null);
+export const Page = () => {
+  const [key, setKey] = React.useState(0);
+  const [sheets, setSheets] = React.useState([{ name: "Sheet1" }]);
+  const sheetRef = React.useRef(null);
 
   return (
     <div

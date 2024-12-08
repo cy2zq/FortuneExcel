@@ -1,5 +1,8 @@
 {
   "name": "@corbe30/fortune-excel",
+  "workspaces": [
+    "src/*"
+  ],
   "version": "1.2.0",
   "description": "An Excel import/export import library for FortuneSheet",
   "main": "dist/main.js",
@@ -24,7 +27,8 @@
     "@storybook/addon-links": "^7.6.12",
     "@storybook/blocks": "^7.6.12",
     "@storybook/react": "^7.6.12",
-    "@storybook/react-vite": "^7.6.12",
+    "@storybook/react-webpack5": "^7.3.2",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
     "@storybook/test": "^7.6.12",
     "@types/node": "^20.11.16",
     "react": "^18.2.0",

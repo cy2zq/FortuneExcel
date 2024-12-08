@@ -1,5 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Page } from "./Page.js";
+import { Page } from "./Page.tsx";
 
 const meta = {
   title: "Example/FortuneSheet",
@@ -7,9 +6,8 @@ const meta = {
   parameters: {
     layout: "fullscreen",
   },
-} satisfies Meta<typeof Page>;
+};
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Importer: Story = {};
+export const Importer = {};
