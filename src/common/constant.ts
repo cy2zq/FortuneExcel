@@ -4,7 +4,7 @@ import {
   numTostring,
   IDataVerificationMap,
   IDataVerificationType2Map,
-} from "../ICommon.js";
+} from "./ICommon.js";
 
 export const columeHeader_word: string[] = [
   "A",

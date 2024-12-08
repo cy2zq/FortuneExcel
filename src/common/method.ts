@@ -1,6 +1,6 @@
 import { columeHeader_word, columeHeader_word_index } from "./constant.js";
 import { IfortuneSheetSelection } from "../ToFortuneSheet/IFortune.js";
-import { IattributeList, stringToNum } from "../ICommon.js";
+import { IattributeList, stringToNum } from "./ICommon.js";
 import ExcelJS from "exceljs";
 
 export function getRangetxt(range: IfortuneSheetSelection, sheettxt: string) {

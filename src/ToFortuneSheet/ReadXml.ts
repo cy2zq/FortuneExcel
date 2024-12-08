@@ -1,4 +1,4 @@
-import { IuploadfileList, IattributeList, stringToNum } from "../ICommon.js";
+import { IuploadfileList, IattributeList, stringToNum } from "../common/ICommon.js";
 import { indexedColors } from "../common/constant.js";
 import { LightenDarkenColor } from "../common/method.js";
 

@@ -20,7 +20,7 @@
   IfortunesheetDataVerification,
 } from "./IFortune.js";
 import { FortuneSheetCelldata } from "./FortuneCell.js";
-import { IattributeList } from "../ICommon.js";
+import { IattributeList } from "../common/ICommon.js";
 import {
   getXmlAttibute,
   getColumnWidthPixel,

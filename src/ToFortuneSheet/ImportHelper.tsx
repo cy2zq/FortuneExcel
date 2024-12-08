@@ -1,5 +1,5 @@
 import React from "react";
-import { transformExcelToFortune } from "./Transform.js";
+import { transformExcelToFortune } from "../common/Transform.js";
 
 export const ImportHelper = (props:any) => {
     const {

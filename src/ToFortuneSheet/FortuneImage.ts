@@ -1,6 +1,6 @@
 import { IfortuneImage } from "./IFortune.js";
 import { FortuneSheetCelldata } from "./FortuneCell.js";
-import { IuploadfileList, IattributeList } from "../ICommon.js";
+import { IuploadfileList, IattributeList } from "../common/ICommon.js";
 import {
   getXmlAttibute,
   getColumnWidthPixel,

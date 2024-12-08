@@ -1,5 +1,5 @@
 import JSZip from "jszip";
-import { IuploadfileList } from "./ICommon.js";
+import { IuploadfileList } from "../common/ICommon.js";
 
 export class HandleZip {
   uploadFile: File;
