@@ -11,7 +11,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "paths": {
-      "@corbe30/fortune-excel": ["./dist/main.js"],
+      "@corbe30/fortune-excel": ["./src/main.ts"],
     }
   }
 }

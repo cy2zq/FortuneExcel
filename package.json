@@ -20,6 +20,9 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
     "@fortune-sheet/react": "^0.19.2",
     "@storybook/addon-essentials": "^7.6.12",
     "@storybook/addon-interactions": "^7.6.12",
@@ -27,12 +30,12 @@
     "@storybook/blocks": "^7.6.12",
     "@storybook/react": "^7.6.12",
     "@storybook/react-webpack5": "^7.3.2",
-    "tsconfig-paths-webpack-plugin": "^4.0.0",
     "@storybook/test": "^7.6.12",
     "@types/node": "^20.11.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.6.16",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
     "typescript": "^5.3.3"
   },
   "dependencies": {

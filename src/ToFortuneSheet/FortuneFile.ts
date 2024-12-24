@@ -2,9 +2,9 @@
   IFortuneFile,
   IfortuneSheetRowAndColumnHidden,
   IfortuneSheetRowAndColumnLen,
-} from "./IFortune.js";
-import { FortuneSheet } from "./FortuneSheet.js";
-import { IuploadfileList, IattributeList } from "../common/ICommon.js";
+} from "./IFortune";
+import { FortuneSheet } from "./FortuneSheet";
+import { IuploadfileList, IattributeList } from "../common/ICommon";
 import {
   workBookFile,
   coreFile,
@@ -16,9 +16,9 @@ import {
   calcChainFile,
   workbookRels,
   numFmtDefaultMap,
-} from "../common/constant.js";
-import { ReadXml, IStyleCollections, Element } from "./ReadXml.js";
-import { getXmlAttibute } from "../common/method.js";
+} from "../common/constant";
+import { ReadXml, IStyleCollections, Element } from "./ReadXml";
+import { getXmlAttibute } from "../common/method";
 import {
   FortuneFileBase,
   FortuneFileInfo,
@@ -26,8 +26,8 @@ import {
   FortuneSheetCelldataBase,
   FortuneSheetCelldataValue,
   FortuneSheetCellFormat,
-} from "./FortuneBase.js";
-import { ImageList } from "./FortuneImage.js";
+} from "./FortuneBase";
+import { ImageList } from "./FortuneImage";
 
 export class FortuneFile {
   private files: IuploadfileList;

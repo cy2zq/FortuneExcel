@@ -1,6 +1,6 @@
 import ExcelJS from "exceljs";
-import { ALIGNMENT_DEFAULT } from "../common/constant.js";
-import { rgb2hex } from "../common/method.js";
+import { ALIGNMENT_DEFAULT } from "../common/constant";
+import { rgb2hex } from "../common/method";
 
 var fillConvert = function (bg: string): ExcelJS.Fill {
   if (!bg) {

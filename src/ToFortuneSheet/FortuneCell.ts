@@ -3,14 +3,14 @@ import {
   IfortuneSheetCelldataValue,
   IfortuneSheetCelldataValueMerge,
   IFortuneSheetCellFormat,
-} from "./IFortune.js";
+} from "./IFortune";
 import {
   ReadXml,
   Element,
   IStyleCollections,
   getColor,
   getlineStringAttr,
-} from "./ReadXml.js";
+} from "./ReadXml";
 import {
   getXmlAttibute,
   getColumnWidthPixel,
@@ -21,15 +21,15 @@ import {
   isJapanese,
   isKoera,
   isContainMultiType,
-} from "../common/method.js";
+} from "../common/method";
 import {
   ST_CellType,
   indexedColors,
   OEM_CHARSET,
   borderTypes,
   fontFamilys,
-} from "../common/constant.js";
-import { IattributeList, stringToNum } from "../common/ICommon.js";
+} from "../common/constant";
+import { IattributeList, stringToNum } from "../common/ICommon";
 import {
   FortuneSheetborderInfoCellValueStyle,
   FortuneSheetborderInfoCellForImp,
@@ -37,7 +37,7 @@ import {
   FortuneSheetCelldataBase,
   FortuneSheetCelldataValue,
   FortuneSheetCellFormat,
-} from "./FortuneBase.js";
+} from "./FortuneBase";
 
 export class FortuneSheetCelldata extends FortuneSheetCelldataBase {
   _borderObject: IfortuneSheetborderInfoCellForImp;

@@ -1,7 +1,7 @@
 
-import { FortuneFile } from "../ToFortuneSheet/FortuneFile.js";
-import { HandleZip } from "../ToFortuneSheet/HandleZip.js";
-import { exportSheetExcel } from "../ToExcel/ExcelFile.js";
+import { FortuneFile } from "../ToFortuneSheet/FortuneFile";
+import { HandleZip } from "../ToFortuneSheet/HandleZip";
+import { exportSheetExcel } from "../ToExcel/ExcelFile";
 
 export const transformExcelToFortune = async (
     e: any,

@@ -1,5 +1,4 @@
 import React from "react";
-import { Sheet } from "@fortune-sheet/core";
 import { Workbook } from "@fortune-sheet/react";
 import "@fortune-sheet/react/dist/index.css";
 import { exportToolBarItem, importToolBarItem } from "@corbe30/fortune-excel";

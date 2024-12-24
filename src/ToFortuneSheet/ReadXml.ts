@@ -1,6 +1,6 @@
-import { IuploadfileList, IattributeList, stringToNum } from "../common/ICommon.js";
-import { indexedColors } from "../common/constant.js";
-import { LightenDarkenColor } from "../common/method.js";
+import { IuploadfileList, IattributeList, stringToNum } from "../common/ICommon";
+import { indexedColors } from "../common/constant";
+import { LightenDarkenColor } from "../common/method";
 
 class xmloperation {
   /**

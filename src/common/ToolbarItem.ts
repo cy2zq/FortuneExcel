@@ -1,6 +1,6 @@
-import ExportIcon from "../icons/ExportIcon.js";
-import ImportIcon from "../icons/ImportIcon.js";
-import { transformFortuneToExcel } from "./Transform.js";
+import ExportIcon from "../icons/ExportIcon";
+import ImportIcon from "../icons/ImportIcon";
+import { transformFortuneToExcel } from "./Transform";
 
 export const exportToolBarItem = (sheetRef:any) => {
   return {

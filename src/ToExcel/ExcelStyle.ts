@@ -1,5 +1,6 @@
+import _ from "lodash";
 import ExcelJS, { CellHyperlinkValue, CellValue } from "exceljs";
-import { fillConvert, fontConvert, alignmentConvert } from "./ExcelConvert.js";
+import { fillConvert, fontConvert, alignmentConvert } from "./ExcelConvert";
 
 const isTime = (d: string) => {
   return d === "hh:mm";
@@ -23,7 +24,7 @@ var setStyleAndValue = function (
     //设置单元格行高,默认乘以1.2倍
     dbrow.height = luckysheet.getRowHeight([rowid])[rowid] / 1.2;
     row.every(function (cell: any, columnid: any) {
-      if (!cell) return true;
+      if (!cell || _.isNil(cell.v) || _.isNaN(cell.v)) return true;
       if (rowid == 0) {
         const dobCol = worksheet.getColumn(columnid + 1);
         //设置单元格列宽除以8
@@ -74,7 +75,7 @@ var setStyleAndValue = function (
       } else if (cell.ct && cell.ct.t == "n") {
         v = +cell.v;
         if (cell.ct !== "General") numFmt = cell.ct.fa;
-      } else if (cell.ct.t == "d") {
+      } else if (cell.ct && cell.ct.t == "d") {
         const mockDate = isTime(cell.ct.fa) ? "2000-01-01 " : "";
         v = new Date(mockDate + cell.m);
         numFmt = cell.ct.fa;
