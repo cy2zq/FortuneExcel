@@ -18,9 +18,9 @@
   IfortunesheetHyperlink,
   IfortunesheetHyperlinkType,
   IfortunesheetDataVerification,
-} from "./IFortune.js";
-import { FortuneSheetCelldata } from "./FortuneCell.js";
-import { IattributeList } from "../common/ICommon.js";
+} from "./IFortune";
+import { FortuneSheetCelldata } from "./FortuneCell";
+import { IattributeList } from "../common/ICommon";
 import {
   getXmlAttibute,
   getColumnWidthPixel,
@@ -33,15 +33,15 @@ import {
   getTransR1C1ToSequence,
   getPeelOffX14,
   getMultiFormulaValue,
-} from "../common/method.js";
+} from "../common/method";
 import {
   borderTypes,
   COMMON_TYPE2,
   DATA_VERIFICATION_MAP,
   DATA_VERIFICATION_TYPE2_MAP,
   worksheetFilePath,
-} from "../common/constant.js";
-import { ReadXml, IStyleCollections, Element, getColor } from "./ReadXml.js";
+} from "../common/constant";
+import { ReadXml, IStyleCollections, Element, getColor } from "./ReadXml";
 import {
   FortuneFileBase,
   FortuneSheetBase,
@@ -50,8 +50,8 @@ import {
   FortuneSheetborderInfoCellValue,
   FortunesheetCalcChain,
   FortuneSheetConfigMerge,
-} from "./FortuneBase.js";
-import { ImageList } from "./FortuneImage.js";
+} from "./FortuneBase";
+import { ImageList } from "./FortuneImage";
 import dayjs from "dayjs";
 
 export class FortuneSheet extends FortuneSheetBase {

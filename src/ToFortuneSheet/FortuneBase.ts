@@ -29,7 +29,7 @@ import {
   IfortuneImages,
   IfortunesheetHyperlink,
   IfortunesheetDataVerification,
-} from "./IFortune.js";
+} from "./IFortune";
 
 export class FortuneFileBase implements IFortuneFile {
   info: IFortuneFileInfo;

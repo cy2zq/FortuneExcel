@@ -1,17 +1,17 @@
-import { IfortuneImage } from "./IFortune.js";
-import { FortuneSheetCelldata } from "./FortuneCell.js";
-import { IuploadfileList, IattributeList } from "../common/ICommon.js";
+import { IfortuneImage } from "./IFortune";
+import { FortuneSheetCelldata } from "./FortuneCell";
+import { IuploadfileList, IattributeList } from "../common/ICommon";
 import {
   getXmlAttibute,
   getColumnWidthPixel,
   fromulaRef,
   getRowHeightPixel,
   getcellrange,
-} from "../common/method.js";
-import { borderTypes } from "../common/constant.js";
-import { ReadXml, IStyleCollections, Element, getColor } from "./ReadXml.js";
-import { FortuneImageBase } from "./FortuneBase.js";
-import { UDOC, FromEMF, ToContext2D } from "../common/emf.js";
+} from "../common/method";
+import { borderTypes } from "../common/constant";
+import { ReadXml, IStyleCollections, Element, getColor } from "./ReadXml";
+import { FortuneImageBase } from "./FortuneBase";
+import { UDOC, FromEMF, ToContext2D } from "../common/emf";
 
 export class ImageList {
   private images: IattributeList;
