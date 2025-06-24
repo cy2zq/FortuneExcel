@@ -56,6 +56,9 @@ Developers of [FortuneSheetExcel](https://github.com/zenmrp/FortuneSheetExcel):
 - [@xxxDeveloper](https://github.com/xxxDeveloper)
 - [@mengshukeji](https://github.com/mengshukeji)
 
+Export support:
+- [Orleans9](https://blog.csdn.net/zinchliang) - [article](https://blog.csdn.net/zinchliang/article/details/120262185)
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
