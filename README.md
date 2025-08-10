@@ -59,6 +59,13 @@ Developers of [FortuneSheetExcel](https://github.com/zenmrp/FortuneSheetExcel):
 Export support:
 - [Orleans9](https://blog.csdn.net/zinchliang) - [article](https://blog.csdn.net/zinchliang/article/details/120262185)
 
+## Contribution
+1. node v20.17.0
+2. Use npm and not yarn
+3. npm run prepare
+4. npm run build-storybook
+5. npm run storybook
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)

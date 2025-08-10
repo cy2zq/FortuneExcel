@@ -11,25 +11,19 @@ const formatHyperlink = (address: string) => {
   return `#\'${sheetCell[0]}\'!${sheetCell[1] || "A1"}`;
 };
 
-var setStyleAndValue = function (
-  luckysheet: any,
-  table: any,
-  worksheet: ExcelJS.Worksheet
-) {
+var setStyleAndValue = function (table: any, worksheet: ExcelJS.Worksheet) {
   const cellArr = table?.data;
   if (!Array.isArray(cellArr)) return;
 
   cellArr.forEach(function (row, rowid) {
     const dbrow = worksheet.getRow(rowid + 1);
-    //设置单元格行高,默认乘以1.2倍
-    dbrow.height = luckysheet.getRowHeight([rowid])[rowid] / 1.2;
+    dbrow.height = (table.config?.rowlen?.[rowid] || 19) / 1.2;
     row.every(function (cell: any, columnid: any) {
-      if (!cell || _.isNil(cell.v) || _.isNaN(cell.v)) return true;
       if (rowid == 0) {
         const dobCol = worksheet.getColumn(columnid + 1);
-        //设置单元格列宽除以8
-        dobCol.width = luckysheet.getColumnWidth([columnid])[columnid] / 8;
+        dobCol.width = (table.config?.columnlen?.[columnid] || 73) / 8;
       }
+      if (!cell) return true;
       let fill = fillConvert(cell.bg);
       let font = fontConvert(
         cell.ff as string,
@@ -46,8 +40,16 @@ var setStyleAndValue = function (
         cell.tb && parseInt(cell.tb, 10),
         cell.tr && parseInt(cell.tr, 10)
       );
-      let value: CellValue;
 
+      let target = worksheet.getCell(rowid + 1, columnid + 1);
+      target.fill = fill;
+      target.font = font;
+      target.alignment = alignment;
+
+      if ((_.isNil(cell.v) || _.isNaN(cell.v)) && cell?.ct?.t !== "inlineStr")
+        return true;
+
+      let value: CellValue;
       var v: number | string | boolean | Date | CellHyperlinkValue = "";
       var numFmt: string = undefined;
 
@@ -90,10 +92,7 @@ var setStyleAndValue = function (
       } else {
         value = v;
       }
-      let target = worksheet.getCell(rowid + 1, columnid + 1);
-      target.fill = fill;
-      target.font = font;
-      target.alignment = alignment;
+
       target.value = value;
       target.numFmt = numFmt;
       return true;
