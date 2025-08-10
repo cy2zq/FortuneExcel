@@ -14,18 +14,17 @@ export const transformExcelToFortune = async (
     const fortuneFile = new FortuneFile(files, excelFile.name);
     fortuneFile.Parse();
 
-    const lsh = fortuneFile.serialize();
+    const lsh = fortuneFile.serialize();    
 
-    let config = lsh.sheets[0].config;
-    for (let sheet of lsh.sheets) {
-        delete sheet.config;
-    }
     setSheets(lsh.sheets);
     setKey((k: number) => k + 1);
 
     setTimeout(() => {
-        sheetRef.current?.setColumnWidth(config?.columnlen || {});
-        sheetRef.current?.setRowHeight(config?.rowlen || {});
+        for (let sheet of lsh.sheets) {
+            let config = sheet.config;
+            sheetRef.current?.setColumnWidth(config?.columnlen || {}, { id: sheet.id });
+            sheetRef.current?.setRowHeight(config?.rowlen || {}, { id: sheet.id });
+        }
     }, 1);
 };
 
