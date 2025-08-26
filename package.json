@@ -1,22 +1,23 @@
 {
-  "name": "@corbe30/fortune-excel",
+  "name": "@cy/fortune-excel",
   "workspaces": [
     "src/*"
   ],
-  "version": "1.2.5",
-  "description": "An Excel import/export import library for FortuneSheet",
+  "version": "1.0.0",
+  "description": "An Excel import/export library for FortuneSheet - Enhanced by cy",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
   "keywords": [
     "fortunesheet",
     "spreadsheet",
-    "excel"
+    "excel",
+    "cy-enhanced"
   ],
-  "author": "shashankc1705@gmail.com",
-  "homepage": "https://corbe30.github.io/FortuneExcel",
+  "author": "cy",
+  "homepage": "https://github.com/cy/FortuneExcel",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Corbe30/FortuneExcel.git"
+    "url": "git+https://github.com/cy/FortuneExcel.git"
   },
   "license": "MIT",
   "devDependencies": {
