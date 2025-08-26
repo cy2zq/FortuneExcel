@@ -15,7 +15,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
   id-token: write
 
 jobs:
@@ -35,25 +34,10 @@ jobs:
       # 运行测试（如果有）
       # - run: npm test
 
-      # 构建项目（如果需要）
-      # - run: npm run build
+      # 构建项目
+      - run: npm run build
 
       # 发布到 npm
       - run: npm publish --tag latest --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      # 构建 Storybook（如果你的项目有）
-      - run: npm run build-storybook
-        continue-on-error: true # 如果没有 storybook 就跳过
-
-      - uses: actions/upload-pages-artifact@v4
-        if: success()
-        with:
-          path: storybook-static
-
-      - id: deploy
-        uses: actions/deploy-pages@v4
-        if: success()
-        with:
-          token: ${{ github.token }}

@@ -1,9 +1,9 @@
 {
-  "name": "@cy/fortune-excel",
+  "name": "cy-fortune-excel",
   "workspaces": [
     "src/*"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An Excel import/export library for FortuneSheet - Enhanced by cy",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -48,7 +48,6 @@
   },
   "scripts": {
     "prepare": "tsc",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build": "tsc"
   }
 }
