@@ -3,7 +3,7 @@
   "workspaces": [
     "src/*"
   ],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An Excel import/export library for FortuneSheet - Enhanced by cy",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -14,10 +14,10 @@
     "cy-enhanced"
   ],
   "author": "cy",
-  "homepage": "https://github.com/cy/FortuneExcel",
+  "homepage": "https://github.com/cy2zq/FortuneExcel",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cy/FortuneExcel.git"
+    "url": "git+https://github.com/cy2zq/FortuneExcel.git"
   },
   "license": "MIT",
   "devDependencies": {
