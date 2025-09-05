@@ -44,6 +44,22 @@ export async function exportSheetExcelCy(name: any, customData: any) {
   fileSaver.saveAs(fileData, `${name}.xlsx`);
 }
 
+// 添加Sheet到Workbook-保证顺序
+export async function addSheetExcelByWorkbook(customData: any, workbook: any) {
+  // const workbook = new ExcelJS.Workbook();
+  customData.every(function (table: any) {
+    if (table?.data?.length === 0) return true;
+    const worksheet = workbook.addWorksheet(table.name);
+    setStyleAndValue(table, worksheet);
+    setMerge(table?.config?.merge, worksheet);
+    setBorder(table, worksheet);
+    setImages(table, worksheet, workbook);
+    setDataValidations(table, worksheet);
+    setHiddenRowCol(table, worksheet);
+    return true;
+  });
+}
+
 export async function exportSheetExcelByWorkbook(
   name: any,
   customData: any,
